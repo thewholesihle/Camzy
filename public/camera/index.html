@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camzy | For When You Feel Like Cam</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <div class="page-content">
+       
+        <div class="logo">
+            <h1>Camzy</h1>
+            <small>JUST A SIMPLE CAMERA ON THE WEB</small>
+        </div>
+        
+        <div class="action">
+            
+            <div class="left">
+              
+                <div class="capture-btn-container">
+                    <div class="capture-btn"  onclick="takePicture()">
+                        <img src="../assets/camera.svg" alt="" class="icon">
+                    </div>
+                    <div class="dropdown">
+                        <img src="../assets/chevron-down.svg" alt="" class="icon">
+                    
+                        <div class="dropdown-items"></div>
+                    </div>
+                </div>
+               
+                <div class="mirror">
+                    <input type="checkbox" name="mirror" id="mirror-checkbox">
+                    <label for="mirror">Mirror</label>
+                </div>
+
+            </div>
+    
+            <div class="right">
+              
+                <a href="./gallery/index.html">
+                    <div class="goto-gallery-btn">
+                       <p>Gallery</p> 
+                       <img src="../assets/chevron-down.svg" alt="" class="icon">
+                    </div>
+                    </a>  
+
+            </div>
+
+        </div>
+   
+    </div>
+    <script defer src="/scripts/p5.min.js"></script>
+    <br>
+    <br>
+    <script defer src="/scripts/app.js"></script>
+</body>
+</html>

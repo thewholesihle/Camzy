@@ -1,0 +1,9 @@
+Fonts - Proxima Nova & Retro
+Colors - You can use a color picker for that
+Border Radius:
+		Use 16px on big squares
+		8px on action buttons
+		6px on modal buttons
+Margins/Gaps : 30px on vertical and 20px on horizontal
+
+# I'm kinda sleepy now so if this doesnt work out for future me, then boot on windows and open the .xd file to check the values.

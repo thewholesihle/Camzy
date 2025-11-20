@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: spartan, "Do-Hyeon";
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+}
+.page-content .top {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  row-gap: 2rem;
+  width: 100%;
+}
+.page-content .top a {
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+}
+.page-content .top .icon {
+  width: 35px;
+}
+.page-content .top .actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #ffffff;
+}
+.page-content .top .actions .right {
+  display: flex;
+}
+.page-content .top .actions .right .select-images-btn, .page-content .top .actions .right .delete-images-btn {
+  display: none;
+  padding: 1rem;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.page-content .top .actions .right .select-images-btn {
+  background: #1a1616;
+  border-radius: 8px;
+}
+.page-content .top .actions .right .delete-images-btn {
+  border-radius: 0 8px 8px 0;
+  background: #eb1414;
+}
+.page-content .top .actions .right .delete-images-btn.allowed {
+  display: block;
+}
+.page-content .top .actions .right .select-images-btn.allowed {
+  border-radius: 8px 0 0 8px;
+}
+.page-content .top .actions .goto-camera-btn {
+  border-radius: 8px;
+  background-color: #1a1616;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.page-content .top .actions .goto-camera-btn .icon {
+  rotate: 90deg;
+}
+
+.images-container {
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 5%;
+  transition: 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  align-self: flex-start;
+  width: 100%;
+}
+.images-container .image-container {
+  transform: scale(1);
+  transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.images-container .image-container.selected {
+  transform: scale(0.94);
+}
+.images-container .image-text-container {
+  position: relative;
+  overflow: hidden;
+}
+.images-container .image-text-container .image-select-checkbox {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.images-container .image-text-container .image-select-checkbox.toggle {
+  display: block;
+}
+.images-container .delete-btn.toggle {
+  display: none;
+}
+.images-container img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.images-container .image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+}
+.images-container .image-name {
+  position: absolute;
+  bottom: 1rem;
+  margin-left: 10px;
+  color: #ffffff;
+}
+
+.loading-state.done {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

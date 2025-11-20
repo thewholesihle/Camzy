@@ -1,0 +1,156 @@
+$imagesContainer-margin : 2rem;
+$white: #ffffff;
+$primary-dark: #1a1616;
+$primary-red: #eb1414;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: spartan, 'Do-Hyeon' ;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+
+    .top {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        row-gap: 2rem;
+        width: 100%;
+        
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: 800;
+        }
+        .icon {
+            width: 35px;
+        }
+        .actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: $white;
+
+            .right {
+                display: flex;
+                .select-images-btn, .delete-images-btn {
+                    display: none;//hide by default
+                    padding: 1rem;
+                    border: none;
+                    color: $white;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+                .select-images-btn {
+                    background: $primary-dark;
+                    border-radius: 8px;
+                }
+                .delete-images-btn {
+                    border-radius: 0 8px 8px 0;
+                    background: $primary-red;
+                }
+
+                .delete-images-btn.allowed {
+                    display: block;
+                }
+                .select-images-btn.allowed  {
+                    border-radius: 8px 0  0 8px;
+                }
+
+            }
+
+           .goto-camera-btn {
+               border-radius: 8px;
+               background-color: $primary-dark;
+               display: flex;
+               align-items: center;
+               padding: 1rem;
+           
+               .icon {
+                   rotate: 90deg;
+               }
+           }
+        }
+    }
+
+
+}
+
+
+
+.images-container {
+    margin: $imagesContainer-margin 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 5%;
+    transition: 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    align-self: flex-start;
+    width: 100%;
+    .image-container {
+        transform: scale(1);
+        transition: 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .image-container.selected {
+        transform: scale(0.94);
+    }
+    .image-text-container{
+        position: relative;
+        overflow: hidden;
+        .image-select-checkbox {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .image-select-checkbox.toggle {
+            display: block;
+        }
+    }
+
+    .delete-btn.toggle {
+        display: none;
+    }
+
+    img {
+        user-select: none;
+    }
+
+    .image {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 8px;
+    }
+
+    .image-name {
+        position: absolute;
+        bottom: 1rem;
+        margin-left: 10px;
+        color: $white;
+    }
+}
+
+.loading-state.done {
+    display: none;
+}
